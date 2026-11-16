@@ -2,7 +2,7 @@
 // Includes Tamil, Hindi, Malayalam, Telugu, Korean, English, Kannada, and Animation blockbusters
 // All posters and backdrops converted to WebP format strictly <= 90KB
 
-export const MOVIES_DATA = [
+const RAW_MOVIES_DATA = [
   {
     "id": 1,
     "title": "Leo",
@@ -1350,6 +1350,21 @@ export const MOVIES_DATA = [
     "topRated": false
   }
 ];
+
+export const formatAssetPath = (path) => {
+  if (!path) return path;
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  const base = import.meta.env.BASE_URL || '/';
+  if (path.startsWith(base)) return path;
+  const clean = path.startsWith('/') ? path.slice(1) : path;
+  return `${base}${clean}`;
+};
+
+export const MOVIES_DATA = RAW_MOVIES_DATA.map((movie) => ({
+  ...movie,
+  poster: formatAssetPath(movie.poster),
+  backdrop: formatAssetPath(movie.backdrop),
+}));
 
 export const ALL_GENRES = [
   'All',
