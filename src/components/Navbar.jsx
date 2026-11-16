@@ -45,7 +45,7 @@ export const Navbar = () => {
           <motion.img
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
-            src="/favicon.webp"
+            src={`${import.meta.env.BASE_URL}favicon.webp`}
             alt="Stackly"
             className="brand-logo-img"
           />
@@ -148,7 +148,7 @@ export const Navbar = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <img
-                        src="/favicon.webp"
+                        src={`${import.meta.env.BASE_URL}favicon.webp`}
                         alt="Stackly"
                         className="brand-logo-img drawer-logo-img"
                       />

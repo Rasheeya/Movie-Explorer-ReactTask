@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="footer-brand-col">
             <Link to="/" className="brand-logo" aria-label="Stackly Home">
               <img
-                src="/favicon.webp"
+                src={`${import.meta.env.BASE_URL}favicon.webp`}
                 alt="Stackly"
                 className="brand-logo-img footer-logo-img"
               />

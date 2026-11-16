@@ -47,7 +47,7 @@ const NotFoundPage = () => {
 
 export const App = () => {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <FavouritesProvider>
         <div className="app-shell">
           <ScrollToTop />
